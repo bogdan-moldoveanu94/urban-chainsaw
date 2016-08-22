@@ -1,4 +1,1 @@
 Flask
-scipy
-numpy
-scikit-image
