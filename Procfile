@@ -1,1 +1,1 @@
-web: gunicorn /src/FFTApp/routes:app --log-file -
+web: gunicorn src.FFTApp.routes:app --log-file -
