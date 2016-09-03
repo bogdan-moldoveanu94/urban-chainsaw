@@ -5,6 +5,7 @@ from nltk.classify import NaiveBayesClassifier
 from nltk.metrics import BigramAssocMeasures
 from nltk.probability import FreqDist, ConditionalFreqDist
 from nltk.metrics.scores import precision, recall
+import pickle
 
 POLARITY_DATA_DIR = os.path.join('polarityData', 'rt-polaritydata')
 RT_POLARITY_POS_FILE = os.path.join(POLARITY_DATA_DIR, 'rt-polarity-pos.txt')
@@ -35,8 +36,11 @@ def evaluate_features(feature_select):
     testFeatures = posFeatures[posCutoff:] + negFeatures[negCutoff:]
 
     # trains a Naive Bayes Classifier
-    classifier = NaiveBayesClassifier.train(trainFeatures)
-
+    # classifier = NaiveBayesClassifier.train(trainFeatures)
+    f = open('trained_classifier.pickle', 'rb')
+    # pickle.dump(classifier, f)
+    classifier = pickle.load(f)
+    f.close()
     # initiates referenceSets and testSets
     referenceSets = collections.defaultdict(set)
     testSets = collections.defaultdict(set)
