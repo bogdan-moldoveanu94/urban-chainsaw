@@ -3,5 +3,11 @@
 <div class="jumbo">
     <h2> Welcome to my page</h2>
     <h3>This is the homepage for my thesis</h3>
+
+    {% if filename %}
+    <h1>some text <img src="{{ url_for('send_file', filename=filename) }}">more text!</h1>
+    {% else %}
+    <h1>no image for whatever reason</h1>
+{% endif %}
 </div>
 {% endblock %}

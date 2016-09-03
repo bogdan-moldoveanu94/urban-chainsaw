@@ -48,6 +48,7 @@ def evaluate_features(feature_select):
     # puts correctly labeled sentences in referenceSets and the predictively labeled version in testsets
     for i, (features, label) in enumerate(testFeatures):
         referenceSets[label].add(i)
+        print features
         predicted = classifier.classify(features)
         testSets[predicted].add(i)
 
