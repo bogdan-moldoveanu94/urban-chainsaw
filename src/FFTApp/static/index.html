@@ -1,0 +1,6 @@
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="{{ url_for('static/js', filename='main.js') }}"></script>
+<html ng-app="sentimentAnalysisApp"></html>
+<body ng-controller="sentimentAnalysisController"></body>
+<form role="form" ng-submit="getResults()"></form>
+<input type="text" ng-model="url" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
