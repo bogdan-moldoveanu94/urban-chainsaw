@@ -1,0 +1,6 @@
+<!doctype html>
+{% if filename %}
+  <h1>some text <img src="{{ url_for('send_file', filename=filename) }}">more text!</h1>
+{% else %}
+  <h1>no image for whatever reason</h1>
+{% endif %}

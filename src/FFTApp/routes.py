@@ -16,7 +16,7 @@ def about():
 @app.route('/show/<filename>')
 def uploaded_file(filename):
     filename = 'https://urban-chainsaw.herokuapp.com//uploads/' + filename
-    return render_template('template.html', filename=filename)
+    return render_template('imageTemplate.html', filename=filename)
 
 @app.route('/uploads/<filename>')
 def send_file(filename):
