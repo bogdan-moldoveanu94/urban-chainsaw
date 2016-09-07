@@ -1,13 +1,14 @@
 import os
 from flask import Flask, render_template, request, send_from_directory, url_for, json
 
+
 UPLOAD_FOLDER = '/src/FFTApp/uploads'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('/static/index.html')
+    return render_template('home.html')
 
 @app.route('/about')
 def about():
